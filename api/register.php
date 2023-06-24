@@ -9,13 +9,12 @@ $dbConn = $db->dbConnect();
 $user = new User($dbConn);
 $data = json_decode(file_get_contents("php://input"));
 $user->email = $data->email;
-$user->firstname = $data->firstname;
-$user->lastname = $data->lastname;
+$user->firstName = $data->firstName;
+$user->lastName = $data->lastName;
 $user->password = $data->password;
-if (isset($user->email) && isset($user->firstname) && isset($user->lastname) && isset($user->password)) {
-    $user->create();
-    echo json_encode(array("message" => "User was created."));
-} else {
-    echo json_encode(array("message" => "Unable to create user."));
+if (isset($user->email) && isset($user->firstName) && isset($user->lastName) && isset($user->password)) {
+    if($user->create()){
+        echo json_encode(array("message" => "User was created."));
+    }else echo json_encode(array("message" => "Unable to create user."));
 }
 ?>
