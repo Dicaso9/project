@@ -1,4 +1,8 @@
 <?php
+session_start();
+if($_SESSION['type']='chofer'){
+    
+}
 class Database{
     private $host="localhost";
     private $user="root";

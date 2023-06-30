@@ -1,4 +1,5 @@
 <?php
+session_start();
 header("Content-Type: application/json");
 header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Allow-Origin: http://localhost/project");
@@ -12,9 +13,12 @@ $user->email = $data->email;
 $user->firstName = $data->firstName;
 $user->lastName = $data->lastName;
 $user->password = $data->password;
+$user->type = $data->type;
+
 if (isset($user->email) && isset($user->firstName) && isset($user->lastName) && isset($user->password)) {
-    if($user->create()){
+    if($user->register()){
         echo json_encode(array("message" => "User was created."));
     }else echo json_encode(array("message" => "Unable to create user."));
 }
+    $user->login()
 ?>
