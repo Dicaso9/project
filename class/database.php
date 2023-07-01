@@ -6,7 +6,7 @@ class Database
     private $password = "";
     private $name = "bd";
 
-    public function dbConnect()
+    public function dbConnect() // metodo de conexion a la base de datos
     {
         mysqli_report(MYSQLI_REPORT_STRICT | MYSQLI_REPORT_ALL);
         try {

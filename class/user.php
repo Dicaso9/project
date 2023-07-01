@@ -6,14 +6,14 @@ class User
     public $firstName;
     public $lastName;
     public $password;
-    public $type;
+    public $type; // almacena el alcance de permisos (admin, funcionario, camionero, cliente)
 
-    public function __construct($dbConn)
+    public function __construct($dbConn) //constructor de usuario con la conexion a la base de datos
     {
         $this->connection = $dbConn;
     }
 
-    function register()
+    function register() // registra a un usuario a la base de datos (backoffice)
     {
         $hashedPassword = password_hash($this->password, PASSWORD_BCRYPT);
         $query = "INSERT INTO users (email, firstName, lastName, password, type)
@@ -21,7 +21,7 @@ class User
         return $this->connection->execute_query($query, [$this->email, $this->firstName, $this->lastName, $hashedPassword, $this->type]);
     }
 
-    function login()
+    function login() // confirma las credenciales ingresadas con la base de datos y genera una _SESSION con alcance de permisos
     {
         $query = "SELECT password FROM users WHERE email = ?";
         $hash = implode(mysqli_fetch_assoc($this->connection->execute_query($query, [$this->email])));
@@ -32,7 +32,7 @@ class User
             return false;
     }
 
-    function logout()
+    function logout() // borra los datos de la _SESSION
     {
         return session_unset();
     }
