@@ -1,5 +1,4 @@
 <?php
-session_start();
 class User
 {
     private $connection;
@@ -8,7 +7,7 @@ class User
     public $lastName;
     public $password;
     public $type;
-    
+
     public function __construct($dbConn)
     {
         $this->connection = $dbConn;
@@ -17,22 +16,24 @@ class User
     function register()
     {
         $hashedPassword = password_hash($this->password, PASSWORD_BCRYPT);
-        $query = "INSERT INTO users (email, firstName, lastName, type, password)
-            Values (?, ?, ?, ?)";
-        if($this->connection->execute_query($query,[$this->email, $this->firstName, $this->lastName, $this->type, $hashedPassword])){
-            return true;
-        }else return false;
+        $query = "INSERT INTO users (email, firstName, lastName, password, type)
+            Values (?, ?, ?, ?, ?)";
+        return $this->connection->execute_query($query, [$this->email, $this->firstName, $this->lastName, $hashedPassword, $this->type]);
     }
 
-    function login(){
+    function login()
+    {
         $query = "SELECT password FROM users WHERE email = ?";
-        if(password_verify($this->password,($this->connection->execute_query($query,[$this->email])))){
-            $_SESSION['type']=$this->connection->execute_query("SELECT type FROM users WHERE email = ?", [$this->email]);
+        $hash = implode(mysqli_fetch_assoc($this->connection->execute_query($query, [$this->email])));
+        if (password_verify($this->password, $hash)) {
+            $_SESSION['type'] = implode(mysqli_fetch_assoc($this->connection->execute_query("SELECT type FROM users WHERE email = ?", [$this->email])));
             return true;
-        }else return false;
+        } else
+            return false;
     }
 
-    function logout(){
-        session_unset();
+    function logout()
+    {
+        return session_unset();
     }
 }

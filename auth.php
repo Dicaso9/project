@@ -9,16 +9,36 @@ $db = new Database();
 $dbConn = $db->dbConnect();
 $user = new User($dbConn);
 $data = json_decode(file_get_contents("php://input"));
+$action = $data->action;
 $user->email = $data->email;
 $user->firstName = $data->firstName;
 $user->lastName = $data->lastName;
 $user->password = $data->password;
 $user->type = $data->type;
 
-if (isset($user->email) && isset($user->firstName) && isset($user->lastName) && isset($user->password)) {
-    if($user->register()){
-        echo json_encode(array("message" => "User was created."));
-    }else echo json_encode(array("message" => "Unable to create user."));
+switch ($action) {
+    case "register":
+        if (isset($user->email) && isset($user->firstName) && isset($user->lastName) && isset($user->password)) {
+            if ($user->register()) {
+                echo json_encode(array("message" => "User was created."));
+            } else
+                echo json_encode(array("message" => "Unable to create user."));
+        } else
+            echo json_encode(array("message" => "insufficient values."));
+        break;
+    case "login":
+        if (isset($user->email) && isset($user->password)) {
+            if ($user->login()) {
+                echo json_encode(array("message" => "User logged in."));
+                echo $_SESSION["type"];
+            } else
+                echo json_encode(array("message" => "Unable to log in user."));
+        } else
+            echo json_encode(array("message" => "insufficient values."));
+        break;
+    case "logout":
+        $user->logout();
+        break;
+
 }
-    $user->login()
 ?>
