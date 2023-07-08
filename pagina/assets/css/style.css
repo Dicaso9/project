@@ -1,0 +1,97 @@
+body{
+    text-align: left;
+    background-color: #3D313F;
+    color: #EDEDF4;
+}
+img{
+    width: 5%;
+    margin-left: 1%;
+    margin-top: 0.2%;
+}
+h1{
+    text-align: center;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 6%;
+    font-size: 400%;
+}
+.box{
+    background-color: #7A7A7B;
+    margin-top: -1%;
+    margin-left: -1%;
+    margin-right: -1%;
+}
+.login{
+	width: 10%;
+	padding: 12px 16px;
+	margin-top: -4.4%;
+	border:1px solid #A8B0AC;
+	border-radius:5px;
+	display:block;
+	color: #EDEDF4;
+	background-color: #A8B0AC;
+    margin-left: 90%;
+    cursor: pointer;
+}
+.login-2{
+	width: 10%;
+	padding: 12px;
+    padding-left: 10%;
+    padding-right: 13%;
+	margin-top: 2%;
+	border:1px solid #A8B0AC;
+	border-radius:5px;
+	display:block;
+	color: #EDEDF4;
+	background-color: #A8B0AC;
+    margin-left: 38%;
+    cursor: pointer;
+}
+
+#slogan{
+    font-size: 160%;
+    margin-left: 5%;
+    margin-right: 30%;
+    text-align: justify;
+    padding: 10px 10px;
+    color: #EDEDF4;
+}
+.camion{
+    width: 20%;
+    margin-top: -20%;
+    margin-left: 70%;
+}
+.info{
+    border: 1px solid #A8B0AC;
+    border-radius: 10px;
+    background-color: #7A7A7B;
+    margin-right: 1%;
+    margin-left: 1%;
+    
+}
+.contacto{
+    width: 10%;
+	padding: 12px 16px;
+	margin-top: -3%;
+	border:1px solid #A8B0AC;
+	border-radius:5px;
+	display:block;
+	color: #EDEDF4;
+	background-color: #A8B0AC;
+    margin-left: 78%;
+}
+.home{
+    width: 10%;
+	padding: 12px 16px;
+	margin-top: -3%;
+	border:1px solid #A8B0AC;
+	border-radius:5px;
+	display:block;
+	color: #EDEDF4;
+	background-color: #A8B0AC;
+    margin-left: 66%;
+}
+.footer{
+    font-size: 70%;
+    text-align: center;
+    margin-top: 8%;
+}

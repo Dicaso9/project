@@ -13,16 +13,22 @@ $user = new User($dbConn);
 
 //entra los datos ingresados a la api a el objeto user y guarda la accion solicitada en una variable
 $data = json_decode(file_get_contents("php://input"));
+if(isset($data->action))
 $action = $data->action;
+if(isset($data->email))
 $user->email = $data->email;
+if(isset($data->firstName))
 $user->firstName = $data->firstName;
+if(isset($data->lastName))
 $user->lastName = $data->lastName;
+if(isset($data->password))
 $user->password = $data->password;
+if(isset($data->type))
 $user->type = $data->type;
 
 switch ($action) { // segun la accion solicitada se ejecuta un metodo de la clase usuario
     case "register": // analiza las entradas necesarias y registra al objeto usuario en la base de datos
-        if (isset($user->email) && isset($user->firstName) && isset($user->lastName) && isset($user->password)) {
+        if (isset($user->email) && isset($user->firstName) && isset($user->lastName) && isset($user->password) && isset($user->type)) {
             if ($user->register()) {
                 echo json_encode(array("message" => "User was created."));
             } else
