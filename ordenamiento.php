@@ -5,8 +5,7 @@ header("Access-Control-Allow-Origin: http://localhost/project");
 include_once 'class/package.php';
 include_once 'class/database.php';
 $db = new Database();
-$dbConn = $db->dbConnect();
-$package = new Package($dbConn);
+$package = new Package($db->dbConnect()); 
 $data = json_decode(file_get_contents('php://input'));
 if (isset($data->idPackage))
     $package->idPackage = $data->idPackage;
