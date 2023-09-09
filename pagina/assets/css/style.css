@@ -1,25 +1,30 @@
-body{
+body {
+    display: flex;
+    flex-direction: column;
     text-align: left;
     background-color: #3D313F;
     color: #EDEDF4;
+    min-height: 100vh;
 }
-.logo{
+
+.logo {
     width: 7vw;
     height: 7vw;
     display: flex;
     align-items: center;
 }
-h1{
+
+h1 {
     text-align: center;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 300%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-header{
-    margin: auto;
-    padding: 4px;
+
+header {
+
     background-color: rgb(122, 109, 109, 0.479);
     text-align: center;
     display: flex;
@@ -27,48 +32,59 @@ header{
     align-items: stretch;
     flex-flow: row wrap;
 }
-.menu{
+
+#article {
+    flex: 1;
+}
+
+.menu {
     padding: 8px;
 }
-nav{
+
+nav {
     display: flex;
     justify-content: flex-end;
     align-items: center;
 }
-nav ul{
+
+nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
-nav ul li{
+
+nav ul li {
     display: inline;
     margin: 10px;
 }
-nav ul li a{
+
+nav ul li a {
     text-decoration: none;
     color: #f2f2f2;
     font-size: 20px;
 }
-nav ul li a:hover{
+
+nav ul li a:hover {
     background-color: rgb(122, 109, 109, 0.479);
 }
-.login-2{
-	width: 10%;
-	padding: 12px;
+
+.login-2 {
+    width: 10%;
+    padding: 12px;
     padding-left: 10%;
     padding-right: 13%;
-	margin-top: 2%;
-	border:1px solid #A8B0AC;
-	border-radius:5px;
-	display:block;
-	color: #EDEDF4;
-	background-color: #A8B0AC;
+    margin-top: 2%;
+    border: 1px solid #A8B0AC;
+    border-radius: 5px;
+    display: block;
+    color: #EDEDF4;
+    background-color: #A8B0AC;
     margin-left: 38%;
     cursor: pointer;
     text-decoration: none;
 }
 
-#slogan{
+#slogan {
     font-size: 160%;
     margin-left: 5%;
     margin: 25px;
@@ -80,19 +96,22 @@ nav ul li a:hover{
     border: 1px solid #EDEDF4;
     border-radius: 10px;
 }
-.camion{
+
+.camion {
     width: 20%;
     margin-top: -20%;
     margin-left: 70%;
 }
 
-.footer{
+footer {
+    padding-top: 10px;
+    padding-bottom: 10px;
     font-size: 100%;
     text-align: center;
     margin-top: 100px;
     background-color: rgb(122, 109, 109, 0.479);
-    padding: 6px;
 }
-*{
+
+* {
     margin: 0;
 }
