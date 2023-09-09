@@ -14,7 +14,8 @@ body{
 }
 .correo{
     border: 0;
-    padding: 0.4em 8.2em;
+    width: 100%;
+    padding: 5px;
     margin-top: 5%;
     border-top: none;
     border-left: none;
@@ -24,7 +25,8 @@ body{
 }
 .contraseña{
     border: 0;
-    padding: 0.4em 8.2em;
+    width: 100%;
+    padding: 5px;
     margin-top: 5%;
     border-top: none;
     border-left: none;
