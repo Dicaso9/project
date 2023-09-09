@@ -1,6 +1,7 @@
 <?php
 header("Content-Type: application/json");
 //header("Access-Control-Allow-Methods: POST");
+//Hola como estas :D
 header("Access-Control-Allow-Origin: http://localhost/project");
 include_once 'class/package.php';
 include_once 'class/database.php';
