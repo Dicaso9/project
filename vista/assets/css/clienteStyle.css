@@ -1,0 +1,97 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #3D313F;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+header{
+    padding: 0.4rem;
+    color: #EDEDF4;
+    display: flex;
+    background-color: #7A7A7B;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    width: 8%;
+}
+nav ul{
+    list-style-type: none;
+}
+nav ul li{
+    display: inline;
+    margin-right: 20px;
+}
+nav ul li a{
+    color: #3D313F;
+    background-color: #EDEDF4;
+    padding: 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 20px;
+    text-align: center;
+}
+h1{
+    font-size: 40px;
+    text-align: center;
+}
+
+.div-tabla{
+    background-color: #A8B0AC;
+    margin: auto;
+    width: 40%;
+    padding: 2rem;
+    margin-top: 5%;
+    border-radius: 10px;
+}
+table{
+    border-collapse: collapse;
+    width: 100%;
+    margin: auto;
+    font-size: 20px;
+}
+th{
+    background-color: #7A7A7B;
+    padding: 10px;
+}
+td{
+    background-color: #EDEDF4;
+    padding: 10px;
+    border-bottom: 1px solid #000;
+}
+.agrega-pedido p{
+    background-color: #A8B0AC;
+    width: 40%;
+    text-align: center;
+    padding: 10px;
+    margin: auto;
+    margin-top: 1%;
+    border-radius: 10px;
+}
+.agrega-pedido p:hover{
+    transform: scale(1.1);
+}
+.agrega-pedido{
+    text-decoration: none;
+    color: #000;
+}
+footer{
+    background-color: #7a7a7bcc;
+    padding: 1rem;
+    font-size: 18px;
+    color: #EDEDF4;
+    margin-top: 5%;
+}
+
+@media screen and (max-width: 600px) {
+    .logo{
+        width: 10%;
+    }
+    h1{
+        font-size: 20px;
+    }
+    nav ul li a{
+        padding: 5px;
+        font-size: 12px;
+    }
+}
