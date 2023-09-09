@@ -10,7 +10,6 @@ include_once 'class/user.php';
 $db = new Database();
 $dbConn = $db->dbConnect();
 $user = new User($dbConn);
-
 //entra los datos ingresados a la api a el objeto user y guarda la accion solicitada en una variable
 $data = json_decode(file_get_contents("php://input"));
 if(isset($data->action))
