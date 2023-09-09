@@ -1,6 +1,6 @@
 <?php
 session_start();
-// api config a
+// api config
 header("Content-Type: application/json");
 header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Allow-Origin: http://localhost/project");
