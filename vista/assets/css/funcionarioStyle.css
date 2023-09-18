@@ -63,7 +63,29 @@ td{
 td:hover{
     background-color: #bbb;
 }
-
+.td-button{
+    text-align: center;
+}
+.tr-camion{
+    text-align: center;
+}
+.tr-paquete{
+    text-align: center;
+}
+.button-camion{
+    text-align: center;
+    padding: 5px;
+    width: 30%;
+}
+.button-almacen{
+    padding: 5px;
+    width: 45%;
+}
+.button-paquete{
+    text-align: center;
+    padding: 5px;
+    width: 30%;
+}
 footer{
     padding-top: 10px;
     padding-bottom: 10px;
