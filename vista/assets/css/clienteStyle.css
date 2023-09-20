@@ -52,15 +52,28 @@ table{
     width: 100%;
     margin: auto;
     font-size: 20px;
+    text-align: center;
+}
+.title-table{
+    border-bottom: 1px solid #000;
 }
 th{
     background-color: #7A7A7B;
     padding: 10px;
+    border-bottom: 1px solid #000;
 }
 td{
-    background-color: #EDEDF4;
     padding: 10px;
     border-bottom: 1px solid #000;
+}
+.completo{
+    background-color: rgba(51, 191, 51, 0.601);
+}
+.parcial{
+    background-color: rgb(255, 204, 110);
+}
+.pendiente{
+    background-color: rgb(203, 203, 203);
 }
 .agrega-pedido p{
     background-color: #A8B0AC;
@@ -75,6 +88,15 @@ td{
     transform: scale(1.1);
 }
 .agrega-pedido{
+    text-decoration: none;
+    color: #000;
+}
+button{
+    margin-left: 10%;
+    padding: 5px;
+    width: 45%;
+}
+button a{
     text-decoration: none;
     color: #000;
 }
