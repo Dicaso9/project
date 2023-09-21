@@ -11,7 +11,7 @@ header{
     padding: 0.4rem;
     color: #EDEDF4;
     display: flex;
-    background-color: #7A7A7B;
+    background-color: rgb(122, 109, 109, 0.479);
     align-items: center;
     gap: 35%;
 }

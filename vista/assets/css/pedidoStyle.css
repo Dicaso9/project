@@ -48,7 +48,9 @@ footer{
     margin-top: 100px;
     background-color: rgb(122, 109, 109, 0.479);
 }
-
+* {
+    margin: 0;
+}
 @media screen and (max-width: 600px) {
     .logo{
         width: 10%;
