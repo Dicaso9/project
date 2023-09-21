@@ -110,6 +110,9 @@ h1{
     text-decoration: none;
     color: #EDEDF4;
 }
+main{
+    flex-grow: 1;
+}
 footer{
     padding-top: 10px;
     padding-bottom: 10px;

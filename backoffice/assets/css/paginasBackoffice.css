@@ -73,7 +73,9 @@ th{
     border-radius: 5px;
     font-size: 18px;
 }
-
+main{
+    flex-grow: 1;
+}
 footer {
     padding-top: 10px;
     padding-bottom: 10px;
