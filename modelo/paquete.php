@@ -1,45 +1,44 @@
 <?php
-class Package
+class Paquete
 {
     private $connection;
-    public $idPackage;
-    public $name;
-    public $idBatch;
+    public $idPaquete;
+    public $matricula;
     /////////////////////////////////////////////////////////////////////////////////////////////////////
     public function __construct($dbConn) //constructor de paquete con la conexion a la base de datos
     {
         $this->connection = $dbConn;
     }
-    function createPackage()
+    function createPaquete()
     {
-        $query = "INSERT INTO package (idPackage, name)
+        $query = "INSERT INTO Paquete (idPaquete, matricula)
             Values (?, ?)";
-        return $this->connection->execute_query($query, [$this->idPackage, $this->name]);
+        return $this->connection->execute_query($query, [$this->idPaquete, $this->matricula]);
     }
 
-    function getPackage()
+    function getPaquete()
     {
-        $query = "SELECT * FROM package WHERE idPackage = ? LIMIT 0,1";
-        return $this->connection->execute_query($query, [$this->idPackage])->fetch_assoc();
+        $query = "SELECT * FROM Paquete WHERE idPaquete = ? LIMIT 0,1";
+        return $this->connection->execute_query($query, [$this->idPaquete])->fetch_assoc();
     }
 
-    function getAllPackage()
+    function getAllPaquete()
     {
-        $query = "SELECT * FROM package";
+        $query = "SELECT * FROM Paquete";
         return $this->connection->query($query)->fetch_all(MYSQLI_ASSOC);
     }
 
-    function updatePackage()
+    function updatePaquete()
     {
-        $query = "UPDATE package SET name = ?, idBatch = ? WHERE idPackage = ?";
-        return $this->connection->execute_query($query, [$this->name, $this->idBatch, $this->idPackage]);
+        $query = "UPDATE Paquete SET matricula = ? WHERE idPaquete = ?";
+        return $this->connection->execute_query($query, [$this->matricula, $this->idPaquete]);
     }
 
-    function patchPackage()
+    function patchPaquete()
     {
         $columnsToUpdate = [];
         $params = [];
-        $primaryKeyColumn = "idPackage";
+        $primaryKeyColumn = "idPaquete";
 
         foreach (get_object_vars($this) as $property => $value) {
             if ($property !== $primaryKeyColumn && $property !== "connection" && isset($value)) {
@@ -52,16 +51,16 @@ class Package
             return false;
         }
 
-        $query = "UPDATE package SET " . implode(", ", $columnsToUpdate) . " WHERE $primaryKeyColumn = ?";
-        $params[] = $this->idPackage;
+        $query = "UPDATE Paquete SET " . implode(", ", $columnsToUpdate) . " WHERE $primaryKeyColumn = ?";
+        $params[] = $this->idPaquete;
 
         return $this->connection->execute_query($query, $params);
     }
 
-    function deletePackage()
+    function deletePaquete()
     {
-        $query = "DELETE FROM package WHERE idPackage = ?";
-        return $this->connection->execute_query($query, [$this->idPackage]);
+        $query = "DELETE FROM Paquete WHERE idPaquete = ?";
+        return $this->connection->execute_query($query, [$this->idPaquete]);
     }
 }
 ?>
