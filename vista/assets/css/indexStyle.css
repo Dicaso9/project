@@ -113,7 +113,110 @@ footer {
     margin-top: 100px;
     background-color: rgb(122, 109, 109, 0.479);
 }
-
+@media screen and (max-width: 600px){
+    .logo{
+        width: 8vw;
+        height: 8vw;
+        display: flex;
+        align-items: center;
+    }
+    h1{
+        font-size: 22px;
+    }
+    header{
+        padding: 1rem;
+    }
+    nav ul li a{
+        padding: 5px;
+        font-size: 15px;
+    }
+    .camion{
+        width: 0%;
+    }
+    #article{
+        width: 60%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: auto;
+        margin-top: 5%;
+    }
+    #slogan{
+        font-size: 20px;
+        width: 80%;
+        text-align: center;
+        padding: 0.8rem;
+    }
+    .login-2 p{
+        width: 50%;
+        margin: auto;
+        background-color: #7A7A7B;
+        color: #EDEDF4;
+        text-align: center;
+        padding: 0.8rem;
+        border-radius: 10px;
+        font-size: 18px;
+        margin-top: 3%;
+    }
+    .login-2 {
+        text-decoration: none;
+    }
+    footer{
+        padding: 1rem;
+    }
+}
+@media screen and (min-width: 601px) and (max-width: 900px){
+    .logo{
+        width: 8vw;
+        height: 8vw;
+        display: flex;
+        align-items: center;
+    }
+    h1{
+        font-size: 25px;
+    }
+    header{
+        padding: 1rem;
+    }
+    nav ul li a{
+        padding: 5px;
+        font-size: 18px;
+    }
+    .camion{
+        width: 0%;
+    }
+    #article{
+        width: 60%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: auto;
+        margin-top: 5%;
+    }
+    #slogan{
+        font-size: 20px;
+        width: 80%;
+        text-align: center;
+        padding: 0.8rem;
+    }
+    .login-2 p{
+        width: 50%;
+        margin: auto;
+        background-color: #7A7A7B;
+        color: #EDEDF4;
+        text-align: center;
+        padding: 0.8rem;
+        border-radius: 10px;
+        font-size: 18px;
+        margin-top: 3%;
+    }
+    .login-2 {
+        text-decoration: none;
+    }
+    footer{
+        padding: 1rem;
+    }
+}
 * {
     margin: 0;
 }
