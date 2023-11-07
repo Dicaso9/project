@@ -67,7 +67,21 @@ h1{
     padding: 60px 0px 60px 0px;
     border-radius: 10px;
 }
+.link-ruta{
+    margin: auto;
+    width: 20%;
+    margin-top: 15px;
+    background-color: #A8B0AC;
+    padding: 8px;
+    border-radius: 10px;
+    text-align: center;
+}
+.link-rutas, a{
+    color: #000;
+    text-decoration: none;
+}
 footer{
+    color: #EDEDF4;
     padding-top: 10px;
     padding-bottom: 10px;
     font-size: 100%;
