@@ -75,21 +75,10 @@ td{
 .pendiente{
     background-color: rgb(203, 203, 203);
 }
-.agrega-pedido p{
-    background-color: #A8B0AC;
-    width: 40%;
-    text-align: center;
-    padding: 10px;
+.agrega-pedido{
+    width: 20%;
     margin: auto;
     margin-top: 1%;
-    border-radius: 10px;
-}
-.agrega-pedido p:hover{
-    transform: scale(1.1);
-}
-.agrega-pedido{
-    text-decoration: none;
-    color: #000;
 }
 button{
     margin-left: 10%;
