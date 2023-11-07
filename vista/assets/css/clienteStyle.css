@@ -79,7 +79,10 @@ td{
     width: 20%;
     margin: auto;
     margin-top: 1%;
+    border-radius: 10px;
+    border: 1px solid black;
 }
+
 button{
     margin-left: 10%;
     padding: 5px;
