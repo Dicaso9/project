@@ -4,7 +4,7 @@ class Database
     private $host = "localhost";
     private $user = "root";
     private $password = "";
-    private $name = "projectv6";
+    private $name = "projectFinal";
 
     public function dbConnect() // metodo de conexion a la base de datos
     {

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 23, 2023 at 03:59 AM
+-- Generation Time: Nov 14, 2023 at 10:14 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `database`
+-- Database: `projectfinal`
 --
 
 -- --------------------------------------------------------
@@ -28,23 +28,9 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `almacen` (
-  `idAlmacen` int(11) NOT NULL
+  `idAlmacen` int(11) NOT NULL,
+  `ubicacion` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `almacen`
---
-
-INSERT INTO `almacen` (`idAlmacen`) VALUES
-(1),
-(2),
-(3),
-(4),
-(5),
-(6),
-(7),
-(8),
-(9);
 
 -- --------------------------------------------------------
 
@@ -53,18 +39,28 @@ INSERT INTO `almacen` (`idAlmacen`) VALUES
 --
 
 CREATE TABLE `camion` (
-  `matricula` varchar(7) NOT NULL
+  `matricula` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `camion`
+-- Table structure for table `camionero`
 --
 
-INSERT INTO `camion` (`matricula`) VALUES
-('SBM3892'),
-('SGG8734'),
-('STP9238'),
-('STP9812');
+CREATE TABLE `camionero` (
+  `ci` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cliente`
+--
+
+CREATE TABLE `cliente` (
+  `ci` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -77,13 +73,40 @@ CREATE TABLE `compone` (
   `idPaquete` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `compone`
+-- Table structure for table `conduce`
 --
 
-INSERT INTO `compone` (`idLote`, `idPaquete`) VALUES
-(1, 4),
-(1, 5);
+CREATE TABLE `conduce` (
+  `fechaInicio` int(11) NOT NULL,
+  `fechaFin` int(11) NOT NULL,
+  `ci` int(11) NOT NULL,
+  `matricula` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `entrega`
+--
+
+CREATE TABLE `entrega` (
+  `estado` int(11) NOT NULL,
+  `idPaquete` int(11) NOT NULL,
+  `matricula` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `funcionario`
+--
+
+CREATE TABLE `funcionario` (
+  `ci` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -93,55 +116,21 @@ INSERT INTO `compone` (`idLote`, `idPaquete`) VALUES
 
 CREATE TABLE `lote` (
   `idLote` int(11) NOT NULL,
-  `deCliente` int(11) NOT NULL
+  `deCliente` int(11) NOT NULL,
+  `destino` int(11) NOT NULL,
+  `idAlmacen` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `lote`
---
-
-INSERT INTO `lote` (`idLote`, `deCliente`) VALUES
-(1, 0),
-(2, 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `movimiento`
+-- Table structure for table `opera`
 --
 
-CREATE TABLE `movimiento` (
-  `idMovimiento` int(11) NOT NULL,
-  `orden` int(11) NOT NULL,
-  `idAlmacen` int(11) NOT NULL,
-  `idRuta` int(11) DEFAULT NULL
+CREATE TABLE `opera` (
+  `ci` int(11) NOT NULL,
+  `idAlmacen` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `movimiento`
---
-
-INSERT INTO `movimiento` (`idMovimiento`, `orden`, `idAlmacen`, `idRuta`) VALUES
-(1, 1, 2, 1),
-(2, 2, 4, 1);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `mueve`
---
-
-CREATE TABLE `mueve` (
-  `idTransporte` int(11) NOT NULL,
-  `idLote` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `mueve`
---
-
-INSERT INTO `mueve` (`idTransporte`, `idLote`) VALUES
-(1, 1);
 
 -- --------------------------------------------------------
 
@@ -151,19 +140,28 @@ INSERT INTO `mueve` (`idTransporte`, `idLote`) VALUES
 
 CREATE TABLE `paquete` (
   `idPaquete` int(11) NOT NULL,
-  `matricula` char(7) DEFAULT NULL
+  `destino` int(11) NOT NULL,
+  `peso` int(11) NOT NULL,
+  `largo` int(11) NOT NULL,
+  `ancho` int(11) NOT NULL,
+  `altura` int(11) NOT NULL,
+  `contactoDestino` int(11) NOT NULL,
+  `estado` int(11) NOT NULL,
+  `ci` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `paquete`
+-- Table structure for table `pertenece`
 --
 
-INSERT INTO `paquete` (`idPaquete`, `matricula`) VALUES
-(1, NULL),
-(4, NULL),
-(5, NULL),
-(2, 'SBM3892'),
-(3, 'SBM3892');
+CREATE TABLE `pertenece` (
+  `fechaInicio` int(11) NOT NULL,
+  `fechaFin` int(11) NOT NULL,
+  `matricula` int(11) NOT NULL,
+  `idAlmacen` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -172,34 +170,21 @@ INSERT INTO `paquete` (`idPaquete`, `matricula`) VALUES
 --
 
 CREATE TABLE `pickup` (
-  `matricula` varchar(7) NOT NULL
+  `matricula` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `pickup`
---
-
-INSERT INTO `pickup` (`matricula`) VALUES
-('SBM3892'),
-('STP4059');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ruta`
+-- Table structure for table `segmento`
 --
 
-CREATE TABLE `ruta` (
-  `idRuta` int(11) NOT NULL
+CREATE TABLE `segmento` (
+  `orden` int(11) NOT NULL,
+  `tiempo` int(11) NOT NULL,
+  `idTrayecto` int(11) NOT NULL,
+  `idAlmacen` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `ruta`
---
-
-INSERT INTO `ruta` (`idRuta`) VALUES
-(1),
-(2);
 
 -- --------------------------------------------------------
 
@@ -208,18 +193,36 @@ INSERT INTO `ruta` (`idRuta`) VALUES
 --
 
 CREATE TABLE `transporte` (
-  `idTransporte` int(11) NOT NULL,
-  `estado` enum('salida','transito','destino') NOT NULL,
-  `idMovimiento` int(11) NOT NULL,
-  `matricula` char(7) NOT NULL
+  `idTrayecto` int(11) NOT NULL,
+  `idAlmacen` int(11) NOT NULL,
+  `idLote` int(11) NOT NULL,
+  `matricula` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `transporte`
+-- Table structure for table `trayecto`
 --
 
-INSERT INTO `transporte` (`idTransporte`, `estado`, `idMovimiento`, `matricula`) VALUES
-(1, 'salida', 1, 'STP9238');
+CREATE TABLE `trayecto` (
+  `idTrayecto` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `usuario`
+--
+
+CREATE TABLE `usuario` (
+  `ci` int(11) NOT NULL,
+  `nombre` int(11) NOT NULL,
+  `apellido` int(11) NOT NULL,
+  `mail` int(11) NOT NULL,
+  `telefono` int(11) NOT NULL,
+  `passwd` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -228,21 +231,10 @@ INSERT INTO `transporte` (`idTransporte`, `estado`, `idMovimiento`, `matricula`)
 --
 
 CREATE TABLE `vehiculo` (
-  `matricula` varchar(7) NOT NULL,
-  `idAlmacen` int(11) DEFAULT NULL
+  `matricula` int(11) NOT NULL,
+  `modelo` int(11) NOT NULL,
+  `estado` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `vehiculo`
---
-
-INSERT INTO `vehiculo` (`matricula`, `idAlmacen`) VALUES
-('STP4059', NULL),
-('SGG8734', 1),
-('STP9812', 1),
-('STP9238', 3),
-('SQV1028', 4),
-('SBM3892', 6);
 
 --
 -- Indexes for dumped tables
@@ -261,6 +253,18 @@ ALTER TABLE `camion`
   ADD PRIMARY KEY (`matricula`);
 
 --
+-- Indexes for table `camionero`
+--
+ALTER TABLE `camionero`
+  ADD PRIMARY KEY (`ci`);
+
+--
+-- Indexes for table `cliente`
+--
+ALTER TABLE `cliente`
+  ADD PRIMARY KEY (`ci`);
+
+--
 -- Indexes for table `compone`
 --
 ALTER TABLE `compone`
@@ -268,32 +272,52 @@ ALTER TABLE `compone`
   ADD KEY `idPaquete` (`idPaquete`);
 
 --
+-- Indexes for table `conduce`
+--
+ALTER TABLE `conduce`
+  ADD PRIMARY KEY (`ci`,`matricula`),
+  ADD KEY `matricula` (`matricula`);
+
+--
+-- Indexes for table `entrega`
+--
+ALTER TABLE `entrega`
+  ADD PRIMARY KEY (`idPaquete`,`matricula`),
+  ADD KEY `matricula` (`matricula`);
+
+--
+-- Indexes for table `funcionario`
+--
+ALTER TABLE `funcionario`
+  ADD PRIMARY KEY (`ci`);
+
+--
 -- Indexes for table `lote`
 --
 ALTER TABLE `lote`
-  ADD PRIMARY KEY (`idLote`);
+  ADD PRIMARY KEY (`idLote`),
+  ADD KEY `idAlmacen` (`idAlmacen`);
 
 --
--- Indexes for table `movimiento`
+-- Indexes for table `opera`
 --
-ALTER TABLE `movimiento`
-  ADD PRIMARY KEY (`idMovimiento`),
-  ADD KEY `idAlmacen` (`idAlmacen`),
-  ADD KEY `idRuta` (`idRuta`);
-
---
--- Indexes for table `mueve`
---
-ALTER TABLE `mueve`
-  ADD PRIMARY KEY (`idTransporte`,`idLote`),
-  ADD KEY `idLote` (`idLote`);
+ALTER TABLE `opera`
+  ADD PRIMARY KEY (`ci`,`idAlmacen`),
+  ADD KEY `idAlmacen` (`idAlmacen`);
 
 --
 -- Indexes for table `paquete`
 --
 ALTER TABLE `paquete`
   ADD PRIMARY KEY (`idPaquete`),
-  ADD KEY `matricula` (`matricula`);
+  ADD KEY `ci` (`ci`);
+
+--
+-- Indexes for table `pertenece`
+--
+ALTER TABLE `pertenece`
+  ADD PRIMARY KEY (`matricula`,`idAlmacen`),
+  ADD KEY `idAlmacen` (`idAlmacen`);
 
 --
 -- Indexes for table `pickup`
@@ -302,25 +326,37 @@ ALTER TABLE `pickup`
   ADD PRIMARY KEY (`matricula`);
 
 --
--- Indexes for table `ruta`
+-- Indexes for table `segmento`
 --
-ALTER TABLE `ruta`
-  ADD PRIMARY KEY (`idRuta`);
+ALTER TABLE `segmento`
+  ADD PRIMARY KEY (`idTrayecto`,`idAlmacen`),
+  ADD KEY `idAlmacen` (`idAlmacen`);
 
 --
 -- Indexes for table `transporte`
 --
 ALTER TABLE `transporte`
-  ADD PRIMARY KEY (`idTransporte`,`idMovimiento`,`matricula`),
-  ADD KEY `idMovimiento` (`idMovimiento`),
+  ADD PRIMARY KEY (`idTrayecto`,`idAlmacen`,`idLote`,`matricula`),
+  ADD KEY `idLote` (`idLote`),
   ADD KEY `matricula` (`matricula`);
+
+--
+-- Indexes for table `trayecto`
+--
+ALTER TABLE `trayecto`
+  ADD PRIMARY KEY (`idTrayecto`);
+
+--
+-- Indexes for table `usuario`
+--
+ALTER TABLE `usuario`
+  ADD PRIMARY KEY (`ci`);
 
 --
 -- Indexes for table `vehiculo`
 --
 ALTER TABLE `vehiculo`
-  ADD PRIMARY KEY (`matricula`),
-  ADD KEY `idAlmacen` (`idAlmacen`);
+  ADD PRIMARY KEY (`matricula`);
 
 --
 -- Constraints for dumped tables
@@ -333,6 +369,18 @@ ALTER TABLE `camion`
   ADD CONSTRAINT `camion_ibfk_1` FOREIGN KEY (`matricula`) REFERENCES `vehiculo` (`matricula`);
 
 --
+-- Constraints for table `camionero`
+--
+ALTER TABLE `camionero`
+  ADD CONSTRAINT `camionero_ibfk_1` FOREIGN KEY (`ci`) REFERENCES `usuario` (`ci`);
+
+--
+-- Constraints for table `cliente`
+--
+ALTER TABLE `cliente`
+  ADD CONSTRAINT `cliente_ibfk_1` FOREIGN KEY (`ci`) REFERENCES `usuario` (`ci`);
+
+--
 -- Constraints for table `compone`
 --
 ALTER TABLE `compone`
@@ -340,24 +388,50 @@ ALTER TABLE `compone`
   ADD CONSTRAINT `compone_ibfk_2` FOREIGN KEY (`idPaquete`) REFERENCES `paquete` (`idPaquete`);
 
 --
--- Constraints for table `movimiento`
+-- Constraints for table `conduce`
 --
-ALTER TABLE `movimiento`
-  ADD CONSTRAINT `movimiento_ibfk_1` FOREIGN KEY (`idAlmacen`) REFERENCES `almacen` (`idAlmacen`),
-  ADD CONSTRAINT `movimiento_ibfk_2` FOREIGN KEY (`idRuta`) REFERENCES `ruta` (`idRuta`);
+ALTER TABLE `conduce`
+  ADD CONSTRAINT `conduce_ibfk_1` FOREIGN KEY (`ci`) REFERENCES `camionero` (`ci`),
+  ADD CONSTRAINT `conduce_ibfk_2` FOREIGN KEY (`matricula`) REFERENCES `vehiculo` (`matricula`);
 
 --
--- Constraints for table `mueve`
+-- Constraints for table `entrega`
 --
-ALTER TABLE `mueve`
-  ADD CONSTRAINT `mueve_ibfk_1` FOREIGN KEY (`idTransporte`) REFERENCES `transporte` (`idTransporte`),
-  ADD CONSTRAINT `mueve_ibfk_2` FOREIGN KEY (`idLote`) REFERENCES `lote` (`idLote`);
+ALTER TABLE `entrega`
+  ADD CONSTRAINT `entrega_ibfk_1` FOREIGN KEY (`idPaquete`) REFERENCES `paquete` (`idPaquete`),
+  ADD CONSTRAINT `entrega_ibfk_2` FOREIGN KEY (`matricula`) REFERENCES `pickup` (`matricula`);
+
+--
+-- Constraints for table `funcionario`
+--
+ALTER TABLE `funcionario`
+  ADD CONSTRAINT `funcionario_ibfk_1` FOREIGN KEY (`ci`) REFERENCES `usuario` (`ci`);
+
+--
+-- Constraints for table `lote`
+--
+ALTER TABLE `lote`
+  ADD CONSTRAINT `lote_ibfk_1` FOREIGN KEY (`idAlmacen`) REFERENCES `almacen` (`idAlmacen`);
+
+--
+-- Constraints for table `opera`
+--
+ALTER TABLE `opera`
+  ADD CONSTRAINT `opera_ibfk_1` FOREIGN KEY (`ci`) REFERENCES `funcionario` (`ci`),
+  ADD CONSTRAINT `opera_ibfk_2` FOREIGN KEY (`idAlmacen`) REFERENCES `almacen` (`idAlmacen`);
 
 --
 -- Constraints for table `paquete`
 --
 ALTER TABLE `paquete`
-  ADD CONSTRAINT `paquete_ibfk_1` FOREIGN KEY (`matricula`) REFERENCES `pickup` (`matricula`);
+  ADD CONSTRAINT `paquete_ibfk_1` FOREIGN KEY (`ci`) REFERENCES `cliente` (`ci`);
+
+--
+-- Constraints for table `pertenece`
+--
+ALTER TABLE `pertenece`
+  ADD CONSTRAINT `pertenece_ibfk_1` FOREIGN KEY (`matricula`) REFERENCES `pickup` (`matricula`),
+  ADD CONSTRAINT `pertenece_ibfk_2` FOREIGN KEY (`idAlmacen`) REFERENCES `almacen` (`idAlmacen`);
 
 --
 -- Constraints for table `pickup`
@@ -366,17 +440,19 @@ ALTER TABLE `pickup`
   ADD CONSTRAINT `pickup_ibfk_1` FOREIGN KEY (`matricula`) REFERENCES `vehiculo` (`matricula`);
 
 --
+-- Constraints for table `segmento`
+--
+ALTER TABLE `segmento`
+  ADD CONSTRAINT `segmento_ibfk_1` FOREIGN KEY (`idTrayecto`) REFERENCES `trayecto` (`idTrayecto`),
+  ADD CONSTRAINT `segmento_ibfk_2` FOREIGN KEY (`idAlmacen`) REFERENCES `almacen` (`idAlmacen`);
+
+--
 -- Constraints for table `transporte`
 --
 ALTER TABLE `transporte`
-  ADD CONSTRAINT `transporte_ibfk_1` FOREIGN KEY (`idMovimiento`) REFERENCES `movimiento` (`idMovimiento`),
-  ADD CONSTRAINT `transporte_ibfk_2` FOREIGN KEY (`matricula`) REFERENCES `camion` (`matricula`);
-
---
--- Constraints for table `vehiculo`
---
-ALTER TABLE `vehiculo`
-  ADD CONSTRAINT `vehiculo_ibfk_1` FOREIGN KEY (`idAlmacen`) REFERENCES `almacen` (`idAlmacen`);
+  ADD CONSTRAINT `transporte_ibfk_1` FOREIGN KEY (`idTrayecto`,`idAlmacen`) REFERENCES `segmento` (`idTrayecto`, `idAlmacen`),
+  ADD CONSTRAINT `transporte_ibfk_2` FOREIGN KEY (`idLote`) REFERENCES `lote` (`idLote`),
+  ADD CONSTRAINT `transporte_ibfk_3` FOREIGN KEY (`matricula`) REFERENCES `camion` (`matricula`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
