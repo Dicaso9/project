@@ -344,6 +344,18 @@ h2{
     .box-pickup{
         width: 100%;
     }
+    .lote p{
+       border-radius: 10px;
+    }
+    .camion p{
+        border-radius: 10px;
+     }
+     .paquete p{
+        border-radius: 10px;
+     }
+     .pickup p{
+         border-radius: 10px;
+      }
 }
 @media screen and (min-width: 601px) and (max-width: 900px) {
     header{
