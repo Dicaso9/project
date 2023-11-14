@@ -370,6 +370,35 @@ h2{
     footer{
         margin-top: 50%;
     }
+    .div-general{
+        display: inline-block;
+        margin: auto;
+        width: 50%;
+    }
+    .box-lote{
+        width: 100%;
+    }
+    .box-camion{
+        width: 100%;
+    }
+    .box-paquete{
+        width: 100%;
+    }
+    .box-pickup{
+        width: 100%;
+    }
+    .lote p{
+        border-radius: 10px;
+     }
+     .camion p{
+         border-radius: 10px;
+      }
+      .paquete p{
+         border-radius: 10px;
+      }
+      .pickup p{
+          border-radius: 10px;
+       }
 }
 * {
     margin: 0;
