@@ -8,10 +8,7 @@ body {
 }
 
 .logo {
-    width: 7vw;
-    height: 7vw;
-    display: flex;
-    align-items: center;
+    width: 8%;
 }
 
 h1 {
@@ -114,24 +111,24 @@ footer {
     background-color: rgb(122, 109, 109, 0.479);
 }
 @media screen and (max-width: 600px){
+    header{
+        display: inline-block;
+        text-align: center;
+        padding: 1rem;
+        width:auto;
+    }
     .logo{
-        width: 8vw;
-        height: 8vw;
-        display: flex;
-        align-items: center;
+        width: 30%;
+        margin-bottom: 3%;
     }
     h1{
-        font-size: 22px;
-    }
-    header{
-        padding: 1rem;
+        font-size: 30px;
+        margin-bottom: 5%;
     }
     nav ul li a{
         padding: 5px;
         font-size: 15px;
-    }
-    .camion{
-        width: 0%;
+        margin: 5px;
     }
     #article{
         width: 60%;
@@ -208,7 +205,6 @@ footer {
         padding: 0.8rem;
         border-radius: 10px;
         font-size: 18px;
-        margin-top: 3%;
     }
     .login-2 {
         text-decoration: none;
