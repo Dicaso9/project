@@ -6,8 +6,8 @@ body{
     border: 1px solid #7A7A7B;
     background-color: white;
     padding: 5%;
-    margin-right: 30%;
-    margin-left: 30%;
+    width: 30%;
+    margin: auto;
     margin-top: 15;
     color: #3D313F;
     font-size: 150%;
@@ -52,4 +52,9 @@ h1{
 img{
     width: 40%;
     padding-left: 30%;
+}
+@media screen and (max-width: 600px) {
+    .box{
+        width: 60%;
+    }
 }
