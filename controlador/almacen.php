@@ -7,7 +7,6 @@ $db = new Database();
 $almacen = new Almacen($db->dbConnect());
 //gets all public properies from the object and saves their names, conn MUST be private
 $inputValidKeys = array_keys(get_object_vars($almacen)); 
-var_dump($inputValidKeys);
 //builds the valid attributes of the object that were sent in the request; if they were not sent, assigns null
 foreach ($inputValidKeys as $key) {
     $almacen->{$key} = isset($input->$key) ? $input->$key : null;

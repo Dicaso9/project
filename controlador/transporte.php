@@ -14,7 +14,7 @@ foreach ($inputValidKeys as $key) {
 
 switch ($_SERVER['REQUEST_METHOD']) {
     case 'GET':
-        if (empty($transporte->)) {
+        if (empty($transporte->idTrayecto) || empty($transporte->idAlmacen) || empty($transporte->idLote) || empty($transporte->matricula)) {
             echo json_encode($transporte->getAllTransporte());
             break;
         } else {
@@ -24,12 +24,12 @@ switch ($_SERVER['REQUEST_METHOD']) {
     case 'POST':
         echo json_encode($transporte->createTransporte());
         break;
-    case 'PUT':
-        echo json_encode($transporte->updateTransporte());
-        break;
-    case 'PATCH':
-        echo json_encode($transporte->patchTransporte());
-        break;
+    // case 'PUT':
+    //     echo json_encode($transporte->updateTransporte());
+    //     break;
+    // case 'PATCH':
+    //     echo json_encode($transporte->patchTransporte());
+    //     break;
     case 'DELETE':
         echo json_encode($transporte->deleteTransporte());
         break;

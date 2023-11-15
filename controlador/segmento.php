@@ -14,7 +14,7 @@ foreach ($inputValidKeys as $key) {
 
 switch ($_SERVER['REQUEST_METHOD']) {
     case 'GET':
-        if (empty($segmento->)) {
+        if (empty($segmento->idTrayecto) || empty($segmento->idAlmacen)) {
             echo json_encode($segmento->getAllSegmento());
             break;
         } else {

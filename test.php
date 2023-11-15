@@ -1,7 +1,7 @@
 <?php
 include("jwt.php");
-$jwt = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsIiI6IiJ9.eyJzdWIiOiIxIiwicm9sZSI6ImZ1bmN0aW9uYXJ5IiwiaWF0IjoxNzAwMDUzNjMwLCJleHAiOjE3MDAwNTU0MzB9.BqlHAx2ps2ysqFcUJT52KGIOkqVjnCDG1LSBl7iPWak";
-echo(jwtGetPayload($jwt,"exp"));
+$jwt = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5Iiwicm9sZSI6ImRlc2Nvbm9jaWRvIiwiaWF0IjoxNzAwMDY5MjU2LCJleHAiOjE3MDAwNzEwNTZ9.GpVW1RU_jowW8Xd64BsSIAuv94TcMhJxSWbZis31ktg";
+echo(jwtGetPayload($jwt,"role"));
 echo("<br>");
 echo date('Y-m-d H:i:s', time());
 echo("<br>");

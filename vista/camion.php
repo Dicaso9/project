@@ -1,3 +1,9 @@
+<?php
+    require_once('../jwt.php');
+    session_start();
+    if (jwtGetPayload($_SESSION['jwt'], "role") != "funcionario") header("login.php");
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

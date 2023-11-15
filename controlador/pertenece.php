@@ -14,7 +14,7 @@ foreach ($inputValidKeys as $key) {
 
 switch ($_SERVER['REQUEST_METHOD']) {
     case 'GET':
-        if (empty($pertenece->)) {
+        if (empty($pertenece->matricula) || empty($pertenece->idAlmacen)) {
             echo json_encode($pertenece->getAllPertenece());
             break;
         } else {

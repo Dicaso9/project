@@ -14,7 +14,7 @@ foreach ($inputValidKeys as $key) {
 
 switch ($_SERVER['REQUEST_METHOD']) {
     case 'GET':
-        if (empty($opera->)) {
+        if (empty($opera->ci) || empty($opera->idAlmacen)) {
             echo json_encode($opera->getAllOpera());
             break;
         } else {
@@ -24,12 +24,12 @@ switch ($_SERVER['REQUEST_METHOD']) {
     case 'POST':
         echo json_encode($opera->createOpera());
         break;
-    case 'PUT':
-        echo json_encode($opera->updateOpera());
-        break;
-    case 'PATCH':
-        echo json_encode($opera->patchOpera());
-        break;
+    // case 'PUT':
+    //     echo json_encode($opera->updateOpera());
+    //     break;
+    // case 'PATCH':
+    //     echo json_encode($opera->patchOpera());
+    //     break;
     case 'DELETE':
         echo json_encode($opera->deleteOpera());
         break;
