@@ -169,6 +169,10 @@ footer{
     height: 50px;
     margin: auto;
 }
+.button-camion2 a{
+    text-decoration: none;
+    color: #000;
+}
 .div-formulario{
     width: 50%;
     margin: auto;
