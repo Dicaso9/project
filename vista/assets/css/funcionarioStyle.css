@@ -307,7 +307,7 @@ h2{
         margin: 10px;
     }
     .div-tabla{
-        width: 65%;
+        width: 70%;
         padding: 1rem;
     }
     .botones-idioma{
@@ -344,6 +344,24 @@ h2{
     .box-pickup{
         width: 100%;
     }
+    .lote p{
+       border-radius: 10px;
+    }
+    .camion p{
+        border-radius: 10px;
+     }
+     .paquete p{
+        border-radius: 10px;
+     }
+     .pickup p{
+         border-radius: 10px;
+      }
+      .button-paquete{
+        width: 100%;
+    }
+    .botones{
+        gap: 10px;
+    }
 }
 @media screen and (min-width: 601px) and (max-width: 900px) {
     header{
@@ -358,6 +376,35 @@ h2{
     footer{
         margin-top: 50%;
     }
+    .div-general{
+        display: inline-block;
+        margin: auto;
+        width: 50%;
+    }
+    .box-lote{
+        width: 100%;
+    }
+    .box-camion{
+        width: 100%;
+    }
+    .box-paquete{
+        width: 100%;
+    }
+    .box-pickup{
+        width: 100%;
+    }
+    .lote p{
+        border-radius: 10px;
+     }
+     .camion p{
+         border-radius: 10px;
+      }
+      .paquete p{
+         border-radius: 10px;
+      }
+      .pickup p{
+          border-radius: 10px;
+       }
 }
 * {
     margin: 0;

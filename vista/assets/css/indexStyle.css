@@ -8,10 +8,7 @@ body {
 }
 
 .logo {
-    width: 7vw;
-    height: 7vw;
-    display: flex;
-    align-items: center;
+    width: 8%;
 }
 
 h1 {
@@ -113,25 +110,53 @@ footer {
     margin-top: 100px;
     background-color: rgb(122, 109, 109, 0.479);
 }
+.botones-idioma{
+    width: 10%;
+    margin-left: 88%;
+    border-radius: 10px;
+    padding: 0.5rem;
+    margin-top: 2%;
+    border: 1px solid black;
+    background-color: rgb(122, 109, 109, 0.479);
+    text-align: center;
+}
+.botones-idioma h4{
+    text-align: center;
+    font-weight:bold;
+}
+.ingles img{
+    width:40%;
+}
+.ingles{
+    width: 50%;
+    margin: 4%;
+}
+.espanol img{
+    width:40%;
+}
+.espanol{
+    width: 50%;
+    margin: 4%;
+}
 @media screen and (max-width: 600px){
+    header{
+        display: inline-block;
+        text-align: center;
+        padding: 1rem;
+        width:auto;
+    }
     .logo{
-        width: 8vw;
-        height: 8vw;
-        display: flex;
-        align-items: center;
+        width: 30%;
+        margin-bottom: 3%;
     }
     h1{
-        font-size: 22px;
-    }
-    header{
-        padding: 1rem;
+        font-size: 30px;
+        margin-bottom: 5%;
     }
     nav ul li a{
         padding: 5px;
         font-size: 15px;
-    }
-    .camion{
-        width: 0%;
+        margin: 5px;
     }
     #article{
         width: 60%;
@@ -163,6 +188,13 @@ footer {
     }
     footer{
         padding: 1rem;
+    }
+    .botones-idioma{
+        width: 30%;
+        margin: auto;
+        margin-top: 2%;
+        margin-bottom: 2%;
+        text-align: center;
     }
 }
 @media screen and (min-width: 601px) and (max-width: 900px){
@@ -208,13 +240,18 @@ footer {
         padding: 0.8rem;
         border-radius: 10px;
         font-size: 18px;
-        margin-top: 3%;
     }
     .login-2 {
         text-decoration: none;
     }
     footer{
         padding: 1rem;
+    }
+    .botones-idioma{
+        text-align: center;
+        margin-left: 85%;
+        width: 10%;
+        margin-left: 83%;
     }
 }
 * {
