@@ -19,8 +19,8 @@
     </header>
     <div class="botones-idioma">
         <h4>LANGUAGE</h4>
-        <a href="lot.html" class="ingles"><img src="../imagenes/usa.png" alt=""></a>
-        <a href="../../lote.html" class="espanol"><img src="../imagenes/españa.png" alt=""></a>
+        <a href="batches.php" class="ingles"><img src="../imagenes/usa.png" alt=""></a>
+        <a href="../../lote.php" class="espanol"><img src="../imagenes/españa.png" alt=""></a>
     </div>
     <div class="div-tabla">
         <table>

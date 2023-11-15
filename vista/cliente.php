@@ -23,8 +23,8 @@
     </header>
     <div class="botones-idioma">
         <h4>IDIOMA</h4>
-        <a href="assets/pagIngles/client.html" class="ingles"><img src="assets/imagenes/usa.png" alt=""></a>
-        <a href="cliente.html" class="espanol"><img src="assets/imagenes/españa.png" alt=""></a>
+        <a href="assets/pagIngles/client.php" class="ingles"><img src="assets/imagenes/usa.png" alt=""></a>
+        <a href="cliente.php" class="espanol"><img src="assets/imagenes/españa.png" alt=""></a>
     </div>
     <div class="div-tabla">
     <table>
@@ -40,22 +40,22 @@
             <tr class="completo">
                 <td>Pedido Nª1</td>
                 <td>Completo</td>
-                <td><a href="pagina-pedido.html"><button>+</button></a></td>
+                <td><a href="pagina-pedido.php"><button>+</button></a></td>
             </tr>
             <tr class="pendiente">
                 <td>Pedido Nª2</td>
                 <td>Pendiente</td>
-                <td><button><a href="pagina-pedido.html">+</a></button></td>
+                <td><button><a href="pagina-pedido.php">+</a></button></td>
             </tr>
             <tr class="parcial">
                 <td>Pedido Nª3</td>
                 <td>Parcial</td>
-                <td><button><a href="pagina-pedido.html">+</a></button></td>
+                <td><button><a href="pagina-pedido.php">+</a></button></td>
             </tr>
             <tr class="parcial">
                 <td>Pedido Nª4</td>
                 <td>Parcial</td>
-                <td><button><a href="pagina-pedido.html">+</a></button></td>
+                <td><button><a href="pagina-pedido.php">+</a></button></td>
             </tr>
         </tbody>
     </table>
@@ -64,7 +64,7 @@
     <div class="box-button-tittle">
     <h2>Ingresar Paquete</h2>
     <div class="ingresar-paquete">
-        <button class="boton-cliente-paquete">Añadir informacion</button>
+        <button class="boton-cliente-paquete"><a href="nuevoPedido.php">Añadir informacion</a></button>
         <button class="boton-cliente-paquete">Agregar destino</button>
     </div>
 </div>

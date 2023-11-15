@@ -26,22 +26,22 @@
     </header>
     <div class="botones-idioma">
         <h4>IDIOMA</h4>
-        <a href="assets/pagIngles/official.html" class="ingles"><img src="assets/imagenes/usa.png" alt=""></a>
-        <a href="funcionario.html" class="espanol"><img src="assets/imagenes/españa.png" alt=""></a>
+        <a href="assets/pagIngles/official.php" class="ingles"><img src="assets/imagenes/usa.png" alt=""></a>
+        <a href="funcionario.php" class="espanol"><img src="assets/imagenes/españa.png" alt=""></a>
     </div>
     <h2 class="h2-funcionario">Administrar</h2>
     <div class="div-general">
         <div class="box-lote">
-            <a href="lote.html" class="lote"><p>Lote</p></a>
+            <a href="lote.php" class="lote"><p>Lote</p></a>
         </div>
         <div class="box-camion">
-            <a href="camion.html" class="camion"><p>Camion</p></a>
+            <a href="camion.php" class="camion"><p>Camion</p></a>
         </div>
         <div class="box-paquete">
-            <a href="paquete.html" class="paquete"><p>Paquete</p></a>
+            <a href="paquete.php" class="paquete"><p>Paquete</p></a>
         </div>
         <div class="box-pickup">
-            <a href="pickup.html" class="pickup"><p>Pickup</p></a>
+            <a href="pickup.php" class="pickup"><p>Pickup</p></a>
         </div>
     </div>
     <footer>

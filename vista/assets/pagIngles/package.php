@@ -19,8 +19,8 @@
     </header>
     <div class="botones-idioma">
         <h4>LANGUAGE</h4>
-        <a href="package.html" class="ingles"><img src="../imagenes/usa.png" alt=""></a>
-        <a href="../../paquete.html" class="espanol"><img src="../imagenes/españa.png" alt=""></a>
+        <a href="package.php" class="ingles"><img src="../imagenes/usa.png" alt=""></a>
+        <a href="../../paquete.php" class="espanol"><img src="../imagenes/españa.png" alt=""></a>
     </div>
     <div class="div-tabla">
         <table>
@@ -51,7 +51,6 @@
         <button class="button-paquete">Assign PickUp</button>
     </div>
     </div>
-
     <footer>    
         <p>&copy; Carrion. All rights reserved.</p>
     </footer>

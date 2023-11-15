@@ -25,8 +25,8 @@
     </header>
     <div class="botones-idioma">
         <h4>IDIOMA</h4>
-        <a href="assets/pagIngles/truck.html" class="ingles"><img src="assets/imagenes/usa.png" alt=""></a>
-        <a href="camion.html" class="espanol"><img src="assets/imagenes/españa.png" alt=""></a>
+        <a href="assets/pagIngles/truck.php" class="ingles"><img src="assets/imagenes/usa.png" alt=""></a>
+        <a href="camion.php" class="espanol"><img src="assets/imagenes/españa.png" alt=""></a>
     </div>
     <div class="div-tabla">
         <table>
@@ -49,7 +49,7 @@
             </tbody>
         </table>
         <div class="botones">
-            <button class="button-camion2"><a href="asignarLoteCamion.html">Asignar Lote</a></button>
+            <button class="button-camion2"><a href="asignarLoteCamion.php">Asignar Lote</a></button>
             <button class="button-camion2">Cambiar Estado</button>
         </div>
 </div>

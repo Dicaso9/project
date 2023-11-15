@@ -20,8 +20,8 @@
     </header>
     <div class="botones-idioma">
         <h4>LANGUAGE</h4>
-        <a href="client.html" class="ingles"><img src="../imagenes/usa.png" alt=""></a>
-        <a href="../../cliente.html" class="espanol"><img src="../imagenes/españa.png" alt=""></a>
+        <a href="client.php" class="ingles"><img src="../imagenes/usa.png" alt=""></a>
+        <a href="../../cliente.php" class="espanol"><img src="../imagenes/españa.png" alt=""></a>
     </div>
     <div class="div-tabla">
     <table>
@@ -37,22 +37,22 @@
             <tr class="completo">
                 <td>Order Nª1</td>
                 <td>Completed</td>
-                <td><a href="pagina-pedido.html"><button>+</button></a></td>
+                <td><a href="pagina-pedido.php"><button>+</button></a></td>
             </tr>
             <tr class="pendiente">
                 <td>Order Nª2</td>
                 <td>Earring</td>
-                <td><button><a href="pagina-pedido.html">+</a></button></td>
+                <td><button><a href="pagina-pedido.php">+</a></button></td>
             </tr>
             <tr class="parcial">
                 <td>Order Nª3</td>
                 <td>Partial</td>
-                <td><button><a href="pagina-pedido.html">+</a></button></td>
+                <td><button><a href="pagina-pedido.php">+</a></button></td>
             </tr>
             <tr class="parcial">
                 <td>Order Nª4</td>
                 <td>Partial</td>
-                <td><button><a href="pagina-pedido.html">+</a></button></td>
+                <td><button><a href="pagina-pedido.php">+</a></button></td>
             </tr>
         </tbody>
     </table>

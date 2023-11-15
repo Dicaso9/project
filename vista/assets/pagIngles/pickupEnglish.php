@@ -19,8 +19,8 @@
     </header>
     <div class="botones-idioma">
         <h4>LANGUAGE</h4>
-        <a href="pickupEnglish.html" class="ingles"><img src="../imagenes/usa.png" alt=""></a>
-        <a href="../../pickup.html" class="espanol"><img src="../imagenes/españa.png" alt=""></a>
+        <a href="pickupEnglish.php" class="ingles"><img src="../imagenes/usa.png" alt=""></a>
+        <a href="../../pickup.php" class="espanol"><img src="../imagenes/españa.png" alt=""></a>
     </div>
     <div class="div-tabla">
         <table>

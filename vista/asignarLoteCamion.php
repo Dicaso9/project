@@ -18,7 +18,7 @@
         </nav>
     </header>
 
-    <form action="asignarLoteCamion.php" method="post">
+    <form action="asignarLote.php" method="post">
         <h2>Asignar Lote</h2>
         <label for="id-lote">ID Lote: </label><br>
         <input type="text" name="id-lote" id="id-lote"><br>

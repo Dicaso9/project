@@ -23,8 +23,8 @@
     </header>
     <div class="botones-idioma">
         <h4>IDIOMA</h4>
-        <a href="assets/pagIngles/truck-driver.html" class="ingles"><img src="assets/imagenes/usa.png" alt=""></a>
-        <a href="camionero.html" class="espanol"><img src="assets/imagenes/españa.png" alt=""></a>
+        <a href="assets/pagIngles/truck-driver.php" class="ingles"><img src="assets/imagenes/usa.png" alt=""></a>
+        <a href="camionero.php" class="espanol"><img src="assets/imagenes/españa.png" alt=""></a>
     </div>
     <div class="div-tabla">
     <table id="tabla-lote">
@@ -47,7 +47,7 @@
         </tbody>
     </table>
     <div class="link-ruta">
-        <a href="ruta.html">Ver rutas</a>
+        <a href="ruta.php">Ver rutas</a>
     </div>
 </div>
 

@@ -20,22 +20,22 @@
     </header>
     <div class="botones-idioma">
         <h4>LANGUAGE</h4>
-        <a href="official.html" class="ingles"><img src="../imagenes/usa.png" alt=""></a>
-        <a href="../../funcionario.html" class="espanol"><img src="../imagenes/españa.png" alt=""></a>
+        <a href="official.php" class="ingles"><img src="../imagenes/usa.png" alt=""></a>
+        <a href="../../funcionario.php" class="espanol"><img src="../imagenes/españa.png" alt=""></a>
     </div>
     <h2 class="h2-funcionario">Manage</h2>
     <div class="div-general">
         <div class="box-lote">
-            <a href="batches.html" class="lote"><p>Batches</p></a>
+            <a href="batches.php" class="lote"><p>Batches</p></a>
         </div>
         <div class="box-camion">
-            <a href="truck.html" class="camion"><p>Truck</p></a>
+            <a href="truck.php" class="camion"><p>Truck</p></a>
         </div>
         <div class="box-paquete">
-            <a href="package.html" class="paquete"><p>Package</p></a>
+            <a href="package.php" class="paquete"><p>Package</p></a>
         </div>
         <div class="box-pickup">
-            <a href="pickupEnglish.html" class="pickup"><p>Pickup</p></a>
+            <a href="pickupEnglish.php" class="pickup"><p>Pickup</p></a>
         </div>
     </div>
     <footer>

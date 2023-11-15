@@ -24,8 +24,8 @@
     </header>
     <div class="botones-idioma">
         <h4>IDIOMA</h4>
-        <a href="assets/pagIngles/routes.html" class="ingles"><img src="assets/imagenes/usa.png" alt=""></a>
-        <a href="ruta.html" class="espanol"><img src="assets/imagenes/españa.png" alt=""></a>
+        <a href="assets/pagIngles/routes.php" class="ingles"><img src="assets/imagenes/usa.png" alt=""></a>
+        <a href="ruta.php" class="espanol"><img src="assets/imagenes/españa.png" alt=""></a>
     </div>
     <main>
         <h2 class="mapa">Ver Mapa</h2>

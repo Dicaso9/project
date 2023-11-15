@@ -22,8 +22,8 @@
     </header>
     <div class="botones-idioma">
         <h4>IDIOMA</h4>
-        <a href="assets/pagIngles/package.html" class="ingles"><img src="assets/imagenes/usa.png" alt=""></a>
-        <a href="paquete.html" class="espanol"><img src="assets/imagenes/españa.png" alt=""></a>
+        <a href="assets/pagIngles/package.php" class="ingles"><img src="assets/imagenes/usa.png" alt=""></a>
+        <a href="paquete.php" class="espanol"><img src="assets/imagenes/españa.png" alt=""></a>
     </div>
     <div class="div-tabla">
         <table>

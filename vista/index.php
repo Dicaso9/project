@@ -21,14 +21,14 @@
             <ul>
                 <li class="menu"><a href="">Home</a></li>
                 <li class="menu"><a href="">Contacto</a></li>
-                <li class="menu"><a href="login.html">Login</a></li>
+                <li class="menu"><a href="login.php">Login</a></li>
             </ul>
         </nav>
     </header>
     <div class="botones-idioma">
         <h4>IDIOMA</h4>
-        <a href="assets/pagIngles/principal.html" class="ingles"><img src="assets/imagenes/usa.png" alt=""></a>
-        <a href="index.html" class="espanol"><img src="assets/imagenes/españa.png" alt=""></a>
+        <a href="assets/pagIngles/principal.php" class="ingles"><img src="assets/imagenes/usa.png" alt=""></a>
+        <a href="index.php" class="espanol"><img src="assets/imagenes/españa.png" alt=""></a>
     </div>
     <div id="article">
         <div class="info">
@@ -40,7 +40,7 @@
             
         </div>
     </div>
-    <a href="login.html" class="login-2"><p>Login</p></a>
+    <a href="login.php" class="login-2"><p>Login</p></a>
     <footer>
         Copyright © 2023 Carrion. All Rights Reserved
     </footer>
