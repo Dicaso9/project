@@ -62,10 +62,38 @@ h1{
 .div-tabla{
     margin: auto;
     width: 60%;
-    margin-top: 5%;
     background-color: #A8B0AC;
     padding: 1rem;
     border-radius: 10px;
+    margin-top: -5%;
+}
+.botones-idioma{
+    width: 10%;
+    margin-left: 88%;
+    border-radius: 10px;
+    padding: 0.5rem;
+    margin-top: 2%;
+    border: 1px solid black;
+    background-color: rgb(122, 109, 109, 0.479);
+    text-align: center;
+}
+.botones-idioma h4{
+    text-align: center;
+    font-weight:bold;
+}
+.ingles img{
+    width:40%;
+}
+.ingles{
+    width: 50%;
+    margin: 4%;
+}
+.espanol img{
+    width:40%;
+}
+.espanol{
+    width: 50%;
+    margin: 4%;
 }
 .link-ruta{
     margin: auto;
@@ -112,6 +140,16 @@ footer{
         font-size: 15px;
         margin: 10px;
     }
+    .botones-idioma{
+        width: 30%;
+        margin: auto;
+        margin-top: 2%;
+        margin-bottom: 2%;
+        text-align: center;
+    }
+    .div-tabla{
+        margin-top: 5%;
+    }
 }
 @media screen and (min-width: 601px) and (max-width: 900px) {
     header{
@@ -120,7 +158,7 @@ footer{
     .botones-idioma{
         text-align: center;
         margin-left: 85%;
-        width: 10%;
+        width: 14%;
         margin-left: 83%;
     }
 }
