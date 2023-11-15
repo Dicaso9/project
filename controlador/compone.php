@@ -1,37 +1,37 @@
 <?php
 session_start();
 require_once "../database.php";
-require_once "../modelo/camionModelo.php";
+require_once "../modelo/componeModelo.php";
 $input = json_decode(file_get_contents("php://input"));
 $db = new Database();
-$camion = new Camion($db->dbConnect());
+$compone = new Compone($db->dbConnect());
 //gets all public properies from the object and saves their names, conn MUST be private
-$inputValidKeys = array_keys(get_object_vars($camion)); 
+$inputValidKeys = array_keys(get_object_vars($compone)); 
 //builds the valid attributes of the object that were sent in the request; if they were not sent, assigns null
 foreach ($inputValidKeys as $key) {
-    $camion->{$key} = isset($input->$key) ? $input->$key : null;
+    $compone->{$key} = isset($input->$key) ? $input->$key : null;
 }
 
 switch ($_SERVER['REQUEST_METHOD']) {
     case 'GET':
-        if (empty($camion->matricula)) {
-            echo json_encode($camion->getAllCamion());
+        if (empty($compone->idLote) || empty($compone->idPaquete)) {
+            echo json_encode($compone->getAllCompone());
             break;
         } else {
-            echo json_encode($camion->getCamion());
+            echo json_encode($compone->getCompone());
             break;
         }
     case 'POST':
-        echo json_encode($camion->createCamion());
+        echo json_encode($compone->createCompone());
         break;
     // case 'PUT':
-    //     echo json_encode($camion->updateCamion());
+    //     echo json_encode($compone->updateCompone());
     //     break;
     // case 'PATCH':
-    //     echo json_encode($camion->patchCamion());
+    //     echo json_encode($compone->patchCompone());
     //     break;
     case 'DELETE':
-        echo json_encode($camion->deleteCamion());
+        echo json_encode($compone->deleteCompone());
         break;
     default:
         echo json_encode("unsupported method");
