@@ -63,12 +63,39 @@ form{
     border: none;
     padding: 10px;
 }
+.botones-idioma{
+    width: 10%;
+    margin-left: 88%;
+    border-radius: 10px;
+    padding: 0.5rem;
+    margin-top: 2%;
+    border: 1px solid black;
+    background-color: rgb(122, 109, 109, 0.479);
+    text-align: center;
+}
+.botones-idioma h4{
+    text-align: center;
+    font-weight:bold;
+}
+.ingles img{
+    width:40%;
+}
+.ingles{
+    width: 50%;
+    margin: 4%;
+}
+.espanol img{
+    width:40%;
+}
+.espanol{
+    width: 50%;
+    margin: 4%;
+}
 .div-tabla{
     background-color: #A8B0AC;
     margin: auto;
     width: 60%;
-    padding: 2rem;
-    margin-top: 5%;
+    padding: 0.5rem;
     border-radius: 10px;
     border: 1px solid #000;
     box-shadow: 0 0 10px 0 black;
@@ -211,7 +238,9 @@ footer{
     border-radius: 10px;
     height: 40vh;
 }
-
+.h2-funcionario{
+    color: #fff;
+}
 .camion p{
     width: auto;
     color: #000;
@@ -256,17 +285,126 @@ h2{
     margin-top: 5%;
     font-size: 30px;
 }
+
 @media screen and (max-width: 600px) {
+    header{
+        display: inline-block;
+        text-align: center;
+        padding: 1rem;
+        width:auto;
+    }
     .logo{
-        width: 10%;
+        width: 20%;
+        margin-bottom: 3%;
     }
     h1{
-        font-size: 20px;
+        font-size: 30px;
+        margin-bottom: 5%;
     }
     nav ul li a{
         padding: 5px;
-        font-size: 12px;
+        font-size: 15px;
+        margin: 10px;
     }
+    .div-tabla{
+        width: 70%;
+        padding: 1rem;
+    }
+    .botones-idioma{
+        width: 30%;
+        margin: auto;
+        margin-top: 2%;
+        margin-bottom: 2%;
+        text-align: center;
+    }
+    .button-camion2{
+        width: 50%;
+    }
+    .div-formulario{
+        width: 60%;
+        padding: 1rem;
+    }
+    form{
+        width: 50%;
+    }
+    .div-general{
+        display: inline-block;
+        margin: auto;
+        width: 50%;
+    }
+    .box-lote{
+        width: 100%;
+    }
+    .box-camion{
+        width: 100%;
+    }
+    .box-paquete{
+        width: 100%;
+    }
+    .box-pickup{
+        width: 100%;
+    }
+    .lote p{
+       border-radius: 10px;
+    }
+    .camion p{
+        border-radius: 10px;
+     }
+     .paquete p{
+        border-radius: 10px;
+     }
+     .pickup p{
+         border-radius: 10px;
+      }
+      .button-paquete{
+        width: 100%;
+    }
+    .botones{
+        gap: 10px;
+    }
+}
+@media screen and (min-width: 601px) and (max-width: 900px) {
+    header{
+        padding: 2rem;
+    }
+    .botones-idioma{
+        text-align: center;
+        margin-left: 85%;
+        width: 10%;
+        margin-left: 83%;
+    }
+    footer{
+        margin-top: 50%;
+    }
+    .div-general{
+        display: inline-block;
+        margin: auto;
+        width: 50%;
+    }
+    .box-lote{
+        width: 100%;
+    }
+    .box-camion{
+        width: 100%;
+    }
+    .box-paquete{
+        width: 100%;
+    }
+    .box-pickup{
+        width: 100%;
+    }
+    .lote p{
+        border-radius: 10px;
+     }
+     .camion p{
+         border-radius: 10px;
+      }
+      .paquete p{
+         border-radius: 10px;
+      }
+      .pickup p{
+          border-radius: 10px;
+       }
 }
 * {
     margin: 0;
