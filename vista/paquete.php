@@ -1,5 +1,6 @@
 <?php
     require_once('../jwt.php');
+    require_once('../utils.php');
     session_start();
 ?>
 <!DOCTYPE html>
@@ -29,10 +30,31 @@
     <div class="div-tabla">
         <table>
             <thead>
-                <th colspan="3">Paquetes existentes</th>
+                <th colspan="6">Paquetes existentes</th>
             </thead>
             <tbody>
                 <tr class="tr-paquete">
+                    <td>idPaquete</td>
+                    <td>destino</td>
+                    <td>peso</td>
+                    <td>contactoDestino</td>
+                    <td>estado</td>
+                    <td>ci</td>
+                </tr>
+            <?php
+                $data = json_decode(curlBuild("GET", "http://" . $_SERVER["HTTP_HOST"] . "/novapines/controlador/paquete.php", []), true);
+                foreach ($data as $key => $value) {
+                    echo '<tr class="tr-paquete">';
+                    echo "<td>".$value['idPaquete']."</td>";
+                    echo "<td>".$value['destino']."</td>";
+                    echo "<td>".$value['peso']."</td>";
+                    echo "<td>".$value['contactoDestino']."</td>";
+                    echo "<td>".$value['estado']."</td>";
+                    echo "<td>".$value['ci']."</td>";
+                    echo '</tr>';
+                }
+                ?>
+                <!-- <tr class="tr-paquete">
                     <td>Paquete 1</td>
                     <td><button class="button-paquete">Modificar</button></td>
                     <td><button class="button-paquete">Borrar</button></td>
@@ -46,7 +68,7 @@
                     <td>Paquete 3</td>
                     <td><button class="button-paquete">Modificar</button></td>
                     <td><button class="button-paquete">Borrar</button></td>
-                </tr>
+                </tr> -->
             </tbody>
         </table>
         <div class="botones">

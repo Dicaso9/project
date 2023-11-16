@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 14, 2023 at 10:14 PM
+-- Generation Time: Nov 16, 2023 at 03:29 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -29,8 +29,16 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `almacen` (
   `idAlmacen` int(11) NOT NULL,
-  `ubicacion` int(11) NOT NULL
+  `ubicacion` varchar(64) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `almacen`
+--
+
+INSERT INTO `almacen` (`idAlmacen`, `ubicacion`) VALUES
+(1, ' Guayabos 4098'),
+(2, 'Sarandí 5993');
 
 -- --------------------------------------------------------
 
@@ -39,8 +47,16 @@ CREATE TABLE `almacen` (
 --
 
 CREATE TABLE `camion` (
-  `matricula` int(11) NOT NULL
+  `matricula` varchar(7) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `camion`
+--
+
+INSERT INTO `camion` (`matricula`) VALUES
+('ATP2349'),
+('STP5789');
 
 -- --------------------------------------------------------
 
@@ -52,6 +68,13 @@ CREATE TABLE `camionero` (
   `ci` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `camionero`
+--
+
+INSERT INTO `camionero` (`ci`) VALUES
+(59102738);
+
 -- --------------------------------------------------------
 
 --
@@ -61,6 +84,13 @@ CREATE TABLE `camionero` (
 CREATE TABLE `cliente` (
   `ci` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `cliente`
+--
+
+INSERT INTO `cliente` (`ci`) VALUES
+(59175823);
 
 -- --------------------------------------------------------
 
@@ -73,6 +103,14 @@ CREATE TABLE `compone` (
   `idPaquete` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `compone`
+--
+
+INSERT INTO `compone` (`idLote`, `idPaquete`) VALUES
+(1, 1),
+(1, 2);
+
 -- --------------------------------------------------------
 
 --
@@ -80,11 +118,18 @@ CREATE TABLE `compone` (
 --
 
 CREATE TABLE `conduce` (
-  `fechaInicio` int(11) NOT NULL,
-  `fechaFin` int(11) NOT NULL,
+  `fechaInicio` datetime NOT NULL,
+  `fechaFin` datetime NOT NULL,
   `ci` int(11) NOT NULL,
-  `matricula` int(11) NOT NULL
+  `matricula` varchar(7) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `conduce`
+--
+
+INSERT INTO `conduce` (`fechaInicio`, `fechaFin`, `ci`, `matricula`) VALUES
+('2023-11-16 03:28:19', '2023-11-16 03:28:19', 59102738, 'SBM8723');
 
 -- --------------------------------------------------------
 
@@ -95,8 +140,15 @@ CREATE TABLE `conduce` (
 CREATE TABLE `entrega` (
   `estado` int(11) NOT NULL,
   `idPaquete` int(11) NOT NULL,
-  `matricula` int(11) NOT NULL
+  `matricula` varchar(7) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `entrega`
+--
+
+INSERT INTO `entrega` (`estado`, `idPaquete`, `matricula`) VALUES
+(1, 1, 'SBM8723');
 
 -- --------------------------------------------------------
 
@@ -108,6 +160,13 @@ CREATE TABLE `funcionario` (
   `ci` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `funcionario`
+--
+
+INSERT INTO `funcionario` (`ci`) VALUES
+(55555555);
+
 -- --------------------------------------------------------
 
 --
@@ -117,9 +176,15 @@ CREATE TABLE `funcionario` (
 CREATE TABLE `lote` (
   `idLote` int(11) NOT NULL,
   `deCliente` int(11) NOT NULL,
-  `destino` int(11) NOT NULL,
   `idAlmacen` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `lote`
+--
+
+INSERT INTO `lote` (`idLote`, `deCliente`, `idAlmacen`) VALUES
+(1, 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -132,6 +197,13 @@ CREATE TABLE `opera` (
   `idAlmacen` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `opera`
+--
+
+INSERT INTO `opera` (`ci`, `idAlmacen`) VALUES
+(55555555, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -140,15 +212,20 @@ CREATE TABLE `opera` (
 
 CREATE TABLE `paquete` (
   `idPaquete` int(11) NOT NULL,
-  `destino` int(11) NOT NULL,
+  `destino` varchar(30) NOT NULL,
   `peso` int(11) NOT NULL,
-  `largo` int(11) NOT NULL,
-  `ancho` int(11) NOT NULL,
-  `altura` int(11) NOT NULL,
   `contactoDestino` int(11) NOT NULL,
   `estado` int(11) NOT NULL,
   `ci` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `paquete`
+--
+
+INSERT INTO `paquete` (`idPaquete`, `destino`, `peso`, `contactoDestino`, `estado`, `ci`) VALUES
+(1, 'arq horacia acosta y lara 6918', 100, 27829348, 0, 59175823),
+(2, 'asuncion 2983', 200, 28193256, 0, 59175823);
 
 -- --------------------------------------------------------
 
@@ -157,11 +234,18 @@ CREATE TABLE `paquete` (
 --
 
 CREATE TABLE `pertenece` (
-  `fechaInicio` int(11) NOT NULL,
-  `fechaFin` int(11) NOT NULL,
-  `matricula` int(11) NOT NULL,
+  `fechaInicio` datetime NOT NULL,
+  `fechaFin` datetime NOT NULL,
+  `matricula` varchar(7) NOT NULL,
   `idAlmacen` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `pertenece`
+--
+
+INSERT INTO `pertenece` (`fechaInicio`, `fechaFin`, `matricula`, `idAlmacen`) VALUES
+('2023-11-16 10:26:41', '2023-11-16 03:26:41', 'SBM8723', 1);
 
 -- --------------------------------------------------------
 
@@ -170,8 +254,15 @@ CREATE TABLE `pertenece` (
 --
 
 CREATE TABLE `pickup` (
-  `matricula` int(11) NOT NULL
+  `matricula` varchar(7) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `pickup`
+--
+
+INSERT INTO `pickup` (`matricula`) VALUES
+('SBM8723');
 
 -- --------------------------------------------------------
 
@@ -186,6 +277,16 @@ CREATE TABLE `segmento` (
   `idAlmacen` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `segmento`
+--
+
+INSERT INTO `segmento` (`orden`, `tiempo`, `idTrayecto`, `idAlmacen`) VALUES
+(1, 25, 1, 1),
+(2, 30, 1, 2),
+(2, 30, 2, 1),
+(1, 15, 2, 2);
+
 -- --------------------------------------------------------
 
 --
@@ -196,8 +297,15 @@ CREATE TABLE `transporte` (
   `idTrayecto` int(11) NOT NULL,
   `idAlmacen` int(11) NOT NULL,
   `idLote` int(11) NOT NULL,
-  `matricula` int(11) NOT NULL
+  `matricula` varchar(7) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `transporte`
+--
+
+INSERT INTO `transporte` (`idTrayecto`, `idAlmacen`, `idLote`, `matricula`) VALUES
+(1, 1, 1, 'ATP2349');
 
 -- --------------------------------------------------------
 
@@ -209,6 +317,14 @@ CREATE TABLE `trayecto` (
   `idTrayecto` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `trayecto`
+--
+
+INSERT INTO `trayecto` (`idTrayecto`) VALUES
+(1),
+(2);
+
 -- --------------------------------------------------------
 
 --
@@ -217,12 +333,21 @@ CREATE TABLE `trayecto` (
 
 CREATE TABLE `usuario` (
   `ci` int(11) NOT NULL,
-  `nombre` int(11) NOT NULL,
-  `apellido` int(11) NOT NULL,
-  `mail` int(11) NOT NULL,
+  `nombre` varchar(20) NOT NULL,
+  `apellido` varchar(20) NOT NULL,
+  `mail` varchar(60) NOT NULL,
   `telefono` int(11) NOT NULL,
-  `passwd` int(11) NOT NULL
+  `passwd` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `usuario`
+--
+
+INSERT INTO `usuario` (`ci`, `nombre`, `apellido`, `mail`, `telefono`, `passwd`) VALUES
+(55555555, 'juan', 'pepe', 'jupppeepe@gmail.com', 97482902, '$2y$10$aD6CXZtvoGmk9cSIDPjrsu2Esp4spU57CWBzrlhjGW41DKbSty7lS'),
+(59102738, 'guzman', 'gonzales', 'sadkhkdsa@gmail.com', 912384, '$2y$10$7iuglVevqMRar27c1FohH.tRkBs7sLW65MaNpcHBPBRvZBmLEcqNO'),
+(59175823, 'manuel', 'emanuel', 'mamamannunun@gmail.com', 92859022, '$2y$10$8F/R/JfXyvuYLENf3q3iL.rRwGaFselvQtviueX273rkf3zg63X0a');
 
 -- --------------------------------------------------------
 
@@ -231,10 +356,19 @@ CREATE TABLE `usuario` (
 --
 
 CREATE TABLE `vehiculo` (
-  `matricula` int(11) NOT NULL,
-  `modelo` int(11) NOT NULL,
-  `estado` int(11) NOT NULL
+  `matricula` varchar(7) NOT NULL,
+  `modelo` varchar(30) NOT NULL,
+  `estado` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `vehiculo`
+--
+
+INSERT INTO `vehiculo` (`matricula`, `modelo`, `estado`) VALUES
+('ATP2349', 'Toyota Transport 1.1', 'funcionamiento'),
+('SBM8723', 'Foton midi', 'mantenimiento'),
+('STP5789', 'Toyota Transport 1', 'funcionamiento');
 
 --
 -- Indexes for dumped tables

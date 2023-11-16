@@ -1,8 +1,8 @@
 <?php
     require_once('../jwt.php');
     session_start();
-    echo $_SESSION['jwt'];
-    if (jwtGetPayload($_SESSION['jwt'], "role") != "funcionario" || jwtValidate($_SESSION['jwt'])) header("location: login.php");
+    // echo $_SESSION['jwt'];
+    // if (jwtGetPayload($_SESSION['jwt'], "role") != "funcionario" || jwtValidate($_SESSION['jwt'])) header("location: login.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">

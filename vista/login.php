@@ -2,7 +2,6 @@
 session_start();
 require_once('../utils.php');
 require_once('../jwt.php');
-var_dump($_POST);
 echo "<br>";
 if (isset($_POST['login'])) {
     $method = "POST";
@@ -11,13 +10,11 @@ if (isset($_POST['login'])) {
         'ci' => $_POST['ci'],
         'passwd' => $_POST['passwd']
     );
-
     // echo $url;
     // echo "<br>";
     // $response = curlBuild("post",$url, $data);
     // var_dump($response);
     $response = json_decode(curlBuild($method, $url, $data));
-    echo $response;
     if ($response) {
         $role = jwtGetPayload($response, "role");
         $_SESSION['jwt'] = $response;
@@ -35,7 +32,7 @@ if (isset($_POST['login'])) {
                 echo "usuario invalido";
         }
     } else {
-        echo "Datos invalidos";
+        echo "<p>Datos invalidos</p>";
     }
 }
 

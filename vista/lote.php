@@ -1,5 +1,6 @@
 <?php
     require_once('../jwt.php');
+    require_once('../utils.php');
     session_start();
 ?>
 <!DOCTYPE html>
@@ -29,14 +30,31 @@
     <div class="div-tabla">
         <table>
             <thead>
-                <th colspan="3">Lotes existentes</th>
+                <th colspan="4">Lotes existentes</th>
             </thead>
             <tbody>
                 <tr class="tr-paquete">
+                    <td>idLote</td>
+                    <td>deCliente</td>
+                    <td>modificar</td>
+                    <td>borrar</td>
+                </tr>
+            <?php
+                $data = json_decode(curlBuild("GET", "http://" . $_SERVER["HTTP_HOST"] . "/novapines/controlador/lote.php", []), true);
+                foreach ($data as $key => $value) {
+                    echo '<tr class="tr-paquete">';
+                    echo "<td>".$value['idLote']."</td>";
+                    echo "<td>".$value['deCliente']."</td>";
+                    echo '<td><button class="button-paquete">Modificar</button></td>
+                    <td><button class="button-paquete">Borrar</button></td>';
+                    echo '</tr>';
+                }
+                ?>
+                <!-- <tr class="tr-paquete">
                     <td>Lote 1</td>
                     <td><button class="button-paquete">Modificar</button></td>
                     <td><button class="button-paquete">Borrar</button></td>
-                </tr>
+                </tr> -->
             </tbody>
         </table>
         <div class="botones-lotes">

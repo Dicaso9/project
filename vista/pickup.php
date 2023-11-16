@@ -1,15 +1,18 @@
 <?php
-    require_once('../jwt.php');
-    session_start();
+require_once('../jwt.php');
+require_once('../utils.php');
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../vista/assets/css/funcionarioStyle.css">
     <title>Document</title>
 </head>
+
 <body>
     <header>
         <img src="assets/imagenes/LogoA.png" class="logo">
@@ -33,6 +36,17 @@
             </thead>
             <tbody>
                 <tr class="tr-camion">
+                    <td>matricula</td>
+                </tr>
+                <?php
+                $data = json_decode(curlBuild("GET", "http://" . $_SERVER["HTTP_HOST"] . "/novapines/controlador/camion.php", []), true);
+                foreach ($data as $key => $value) {
+                    echo '<tr class="tr-camion">';
+                    echo "<td>" . $value['matricula'] . "</td>";
+                    echo '</tr>';
+                }
+                ?>
+                <!-- <tr class="tr-camion">
                     <td>Matricula Pickup 1</td>
                     <td>STP 7272</td>
                 </tr>
@@ -43,16 +57,17 @@
                 <tr class="tr-camion">
                     <td>Matricula Pickup 3</td>
                     <td>STP 3843</td>
-                </tr>
+                </tr> -->
             </tbody>
         </table>
         <div class="boton-pickup">
             <button class="button-paquete">Asignar Paquetes</button>
         </div>
-</div>
+    </div>
 
     <footer>
         <p>&copy; Carrion. Todos los derechos reservados.</p>
     </footer>
 </body>
+
 </html>
