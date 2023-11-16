@@ -1,5 +1,5 @@
 <?php
-    require_once('../jwt.php');
+    require_once('../../../jwt.php');
     session_start();
 ?>
 <!DOCTYPE html>
