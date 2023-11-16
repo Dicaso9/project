@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/paginasBackoffice.css">
     <link rel="shortcut icon" href="assets/imagenes/LogoA.png" type="image/x-icon">
-    <title>Document</title>
+    <title>Lotes</title>
 </head>
 <?php
 require_once "../modelo/database.php";
